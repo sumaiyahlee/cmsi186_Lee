@@ -17,7 +17,7 @@ public class SkateRamp  {
         double yValue = 0.0;
         for( int i = 0; i < coeffs.length; i++ ) {
            yValue += coeffs[i] * Math.pow( midPoint, i );
-        }
+        }g
         return yValue;
      }
 
