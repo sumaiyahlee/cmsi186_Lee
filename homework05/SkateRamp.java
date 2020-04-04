@@ -3,12 +3,12 @@ public class SkateRamp  {
     private double percentage = 1.0;
 
     public void printUsage() {
-        System.out.println ("\n USAGE:\n" + 
-                            "    java SkateRamp <function> <coeff1> <coeff2> ... <lower> <upper> [percent]\n" + 
+        System.out.println ("\n USAGE:\n" +
+                            "    java SkateRamp <function> <coeff1> <coeff2> ... <lower> <upper> [percent]\n" +
                             "      where: \n" +
                             "        <function> is a mathematical function like 'poly' or 'sin'\n" +
-                            "        <coeff[n]> is a coefficient for the function's X terms\n" + 
-                            "        <lower> and <upper> are the lower and upper bounds of the function\n" + 
+                            "        <coeff[n]> is a coefficient for the function's X terms\n" +
+                            "        <lower> and <upper> are the lower and upper bounds of the function\n" +
                             "        [percent] is an optional value for comparison");
         System.exit(0);
     }
@@ -17,7 +17,7 @@ public class SkateRamp  {
         double yValue = 0.0;
         for( int i = 0; i < coeffs.length; i++ ) {
            yValue += coeffs[i] * Math.pow( midPoint, i );
-        }g
+        }
         return yValue;
      }
 
@@ -48,7 +48,7 @@ public class SkateRamp  {
         }
         return sum;
     }
-    
+
     public static void main (String [] args) {
         // adding coefficients to arraylist
         ArrayList<Double> coefficients = new ArrayList<Double>();
@@ -58,7 +58,7 @@ public class SkateRamp  {
         SkateRamp sr = new SkateRamp();
         if (0 == args.length) {
             sr.printUsage();
-        } 
+        }
         else {
             for (int i = 1; i < (args.length - 2); i++) {
                 coefficients.add(Double.parseDouble(args[i]));
@@ -75,7 +75,7 @@ public class SkateRamp  {
         else if (args[0].equals("sin")) {
             System.out.println(integrateSin(Double.parseDouble(args[1]), Double.parseDouble(args[2]), 50));
         }
-        
+
     }
 
 }
