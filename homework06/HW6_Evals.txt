@@ -1,0 +1,158 @@
+
+Evaluation for homework 06: Brobdingnagian Integer
+   and associated Collatz sequence using BrobInt
+
+BrobInt class
+Includes running BrobIntTester test harness
+Includes running Neptune tester using several numbers
+   View h6.bat or h6.sh to see test parameters used
+   View testresults.txt to see resulting output
+NOTE: "Brobdingnagian Integer" is abbreviated "BrobInt"
+   per the discussion in class
+=======================================================
+
+The BrobInt.java file and the Neptune.java file must exists and compile.  There
+are a total of 7 points awarded for the various methods listed for BrobInt.java.
+There are a total of 9 points awarded for the Collatz.java file including the
+seven test cases.  The BrobIntTester.java file is not required to be in the repo
+but will be added if it is not there.  If you have made any modifications to the
+BrobIntTester.java file which are not reflected in the version that is on *MY*
+repo, PLEASE put a copy of *YOUR* version into *YOUR* repo for use in evaluation.
+
+The BrobIntTester.java file will be used to verify correct operation of your
+BrobInt methods.  The points awarded are as shown below for each of the BrobInt
+operations.  Parial credit is awarded if some of the tests pass and others do
+not; i.e., if four tests get correct answers for subtraction and three don't,
+you will get 4 points for the subtraction tests.
+
+Point distribution is spread to help insure that if you don't get the more
+difficult methods to work, your score will not be impacted as heavily.  For
+example, add and multiply should be straightforward to implement, so they have
+ten tests each for a total of 20 points.  Division is the hardest, so it has
+only four tests.  Remaindering is easy, but requires division to work, so it
+has only two tests.
+
+There are two "gimme" items, one for "equals" tests for which there are three
+points, and one for the Neptune constructor which is worth one point.
+
+For this exercise you are required to have JavaDoc commments in your code.  The
+javadoc tool will be run on your code as explained in class, using a very basic
+automated method.  Mismatches or javadoc errors will be counted against the
+total maximum of two points, in 1/2 point increments.  For example, if your
+code takes an argument that is not listed in the javadocs using a "@param" tag,
+that will cost 1/2 point.  Four such errors mean you will lose the entire
+javadoc credit for the project.
+
+=======================================================
+
+A total of one point each for the following,
+   except where noted with "[of x]":
+
+BrobInt class file:
+BrobInt constructor exists             :   1 point
+validate [method or code] exists       :   1 point
+add method exists                      :   1 point
+subtract method exists                 :   1 point
+multiply method exists                 :   1 point
+divide method exists                   :   1 point
+remainder method exists                :   1 point
+BrobInt compiles                       :   1 point
+BrobInt class tests [1 pt each]        :   0 point [EC]
+
+BrobIntTester class file:
+BrobIntTester compiles:                :   1 point
+constructor tests [of 7]               :   7 points
+add [of 18]                            :   3 points
+   [includes 6 more constructor tests]
+subtract [of 9]                        :   0 points
+multiply [of 14]                       :   4 points
+allZero [gimme]                        :   1 point
+divide [of 4]                          :   0 points
+remainder [of 2]                       :   0 points
+
+Neptune class file:
+Neptune constructor [gimme]            :   1 point
+Neptune input error handling [gimme]   :   1 point
+Neptune output correct [of 4]          :   0 points
+
+General scores:
+Minimum two files in repo [of 2]       :   2 points
+Coding Style [of 5]                    :   5 points
+
+Total possible score: 78 points
+
+Evaluation
+==========
+   your score is 34.00 out of 78.00
+   you also got   0.00 extra credit points
+    total score: 34.00 out of 78.00 = 43.59% which is not so good....
+
+DETAILED COMMENTS:
+==================
+You had a compile error in BrobInt.java: missing semicolon on line 256.
+   I fixed that for you.
+Then you had a compile error in BrobInt.java: cannot find symbol on line 366.
+   That was because you took out the "import" statement for the Arrays clas
+      which is needed for the "toArray()" method.  I fixed that for you.
+THEN you had a compile error in BrobInt.java: missing return statement on line 264.
+   in your remainder() method, you have a return statement that is inside an "if"
+      that is inside a loop, and the compiler needs to know that somewhere you'll
+      actually return a BrobInt.  I put in a line that returns "this" to fool the
+      compiler, but actually that method won't work anyhow.  You need to actually
+      RE-ASSIGN the computed value to the BrobInt; it won't work doing it "in place"
+      the way you have it.
+Now it compiles.  However, you also took out the tests that were in the template,
+and didn't add any new ones in, so I can't give you any extra credit points for
+BrobInt testing...
+
+Going into BrobIntTester.java, you removed all the constants at the top of your
+BrobInt.java file, so the tester doesn't compile.  There were seven compile errors
+in THAT file now.  Lines 155, 167, 179, 644, 653, 670, and 685 need the constants
+"ZERO", "ONE", "TEN", and "TWO".  I put those back in for you in your BrobInt.java
+file.  Now they both compile.
+
+Now moving to Neptune.java, THAT has 3 compile errors.  At this point, I'm going
+to stop fixing compile errors.  Sorry, but that is something YOU should have done
+before you committed....
+
+In the BrobIntTester file:
+   the constructor tests all work.
+   the add tests failed on all tests except 13, 14, and 15.
+   the subtract tests all failed, because they threw exceptions.
+   ten of the multiplication tests failed, with wrong answers.
+   all of the division and remainder tests failed, they threw exceptions.
+
+Looking at your code, you seem to be expecting that calling the operations will change
+the value of the BrobInt "in place", meaning you do things like:
+
+      BrobInt b1 = new BrobInt( "123456" );
+      BrobInt b2 = new BrobInt( "123" );
+      b1.add( b2 );
+
+....and expect the value of b1 to be 123579.  This is incorrect.  What you need to do
+to get addition is follow the model I showed in class.  When you add two normal numbers
+that produces a THIRD normal number:
+
+      123456      <- first number
+     +   123      <- second number
+     -------
+      123579      <- NEW NUMBER which is NOT the same "entity" as the first number
+
+Likewise, when performing operations on BrobInts, you need to do it like this:
+
+      BrobInt b1 = new BrobInt( "123456" );
+      BrobInt b2 = new BrobInt( "123" );
+      BrobInt b3 = b1.add( b2 );
+
+If you want to re-use the same BrobInt, you need to explicitly do so:
+
+      BrobInt b1 = new BrobInt( "123456" );
+      BrobInt b2 = new BrobInt( "123" );
+      b1 = b1.add( b2 );
+
+I hope this helps you understand what's going on, Sumaiyah.  If there is anything that's
+not clear, please let me know and we'll work together to make sure you understand!
+
+I'm sorry for the bad news, Sumaiyah...  This was a VERY hard assignment, one of the two
+or three most difficult of the entire LMU CS program.  Don't get discouraged at this one
+assignment ~ keep at it and you'll be successful!!

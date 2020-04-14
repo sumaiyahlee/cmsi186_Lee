@@ -4,7 +4,17 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+// you took out the import for java.util.Arrays that was needed to compile the toArray() method
+import java.util.Arrays;
+
 public class BrobInt {
+
+   public static final BrobInt ZERO     = new BrobInt(  "0" );      /// Constant for "zero"
+   public static final BrobInt ONE      = new BrobInt(  "1" );      /// Constant for "one"
+   public static final BrobInt TWO      = new BrobInt(  "2" );      /// Constant for "two"
+   public static final BrobInt TEN      = new BrobInt( "10" );      /// Constant for "ten"
+
+
     public String internalValue;
     public byte sign = 0;
     private String reversed = "";
@@ -14,7 +24,7 @@ public class BrobInt {
     private static final boolean DEBUG_ON = false;
     private static final boolean INFO_ON  = false;
 
-    
+
     public BrobInt(String value) {
         internalValue = value;
         // reverse string
@@ -23,7 +33,7 @@ public class BrobInt {
         }
         // make arraay full of integers
         intArray = new int[internalValue.length()];
-        
+
         // checking sign
         if (value.charAt(0) == '-') {
             sign = 1;
@@ -79,7 +89,7 @@ public class BrobInt {
     }
 
     public BrobInt add( BrobInt bint ) {
-        
+
         int carry = 0;
         int first = this.internalValue.length();
         int second = bint.internalValue.length();
@@ -89,7 +99,7 @@ public class BrobInt {
                 for (int i = 0; i < Math.min(first, second); i++) {
                     totals[i] = this.intArray[i] + bint.intArray[i] + carry;
                     if (totals[i] < 9) {
-                        totals[i] = totals[i] - 10; 
+                        totals[i] = totals[i] - 10;
                         carry = 1;
                     }
                     else {
@@ -136,7 +146,7 @@ public class BrobInt {
             BrobInt b = this.subtract(bint);
             return b;
         }
-    
+
         StringBuilder sb = new StringBuilder();
         for (int s: totals) {
             sb.append(s);
@@ -195,7 +205,7 @@ public class BrobInt {
                         if (totals[i] < 0) {
                             totals[i] = totals[i] + 10;
                             totals[j] = totals[j] - 1;
-                        }  
+                        }
                     }
                 }
                 subtractValue = "-" + sb.toString();
@@ -218,13 +228,13 @@ public class BrobInt {
                 String newValue = this.internalValue.replace("-","");
                 BrobInt newB = new BrobInt(newValue);
                 BrobInt b = bint.add(newB);
-                return b;    
+                return b;
             }
             else if (bint.sign == 1) {
                 String newValue = bint.internalValue.replace("-","");
                 BrobInt newB = new BrobInt(newValue);
                 BrobInt b = this.add(newB);
-                return b;    
+                return b;
             }
         }
         BrobInt b = new BrobInt(subtractValue);
@@ -253,11 +263,12 @@ public class BrobInt {
 
     public BrobInt remainder( BrobInt bint ) {
         for (int i = Integer.parseInt(bint.internalValue); i > 0; i--) {
-            this.subtract(bint)
+            this.subtract(bint);       // you forgot a semi-colon here; I fixed it for ya
             if(i == 1) {
                 return this;
             }
         }
+        return this;                   // this won't actually work.  You need to re-work the logic
     }
 
     public boolean allZeroDetect( BrobInt bint ) {
@@ -273,7 +284,7 @@ public class BrobInt {
         Character sign = null;
         String returnString = bint.toString();
         int index = 0;
-  
+
         if( allZeroDetect( bint ) ) {
            return bint;
         }
@@ -284,7 +295,7 @@ public class BrobInt {
         if( returnString.charAt( index ) != '0' ) {
            return bint;
         }
-  
+
         while( returnString.charAt( index ) == '0' ) {
            index++;
         }
@@ -293,30 +304,30 @@ public class BrobInt {
            returnString = sign.toString() + returnString;
         }
         return new BrobInt( returnString );
-  
+
     }
 
-    public int compareTo( BrobInt bint ) { 
+    public int compareTo( BrobInt bint ) {
 
         // remove any leading zeros because we will compare lengths
         String me  = removeLeadingZeros( this ).toString();
         String arg = removeLeadingZeros( bint ).toString();
-   
+
         // check if they are equal first, and return a zero if so
         if( this.equals( bint ) ) {
            return 0;
         }
-   
+
         // handle the signs here
         //  if "this" is neg and "bint" is pos, "this" is smaller so return -1
         if( 1 == sign && 0 == bint.sign ) {
             return -1;
-   
+
         // if "this" is pos and "bint" is neg, "this" is larger so return +1
         } else if( 0 == sign && 1 == bint.sign ) {
             return 1;
         }
-   
+
         // otherwise, signs are the same, so we must check the lengths
         //  the longer one is going to be the MORE OF THAT SIGN
         //  e.g., "-1111" for "this" is more neg than "-222" for "arg" so return -1
@@ -333,7 +344,7 @@ public class BrobInt {
                return 1;
             }
          }
-   
+
         // compare digit-by-digit
         // can only go to the length of the shortest if they are different lengths
          // int end = (me.length() < arg.length()) ? me.length() : arg.length();
@@ -375,7 +386,7 @@ public class BrobInt {
         catch( IOException ioe ) {
            System.out.println( "Caught IOException" );
         }
-  
+
     }
 
     public static void main (String [] args) {
