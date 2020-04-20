@@ -81,21 +81,21 @@ main for testing  : Exists, with some tests in it     - 1 point
 
 class HighRoll    : Exists, coding style acceptable   - 1 point
 TUI:              : works, all options present        - 1 point
-option 1 roll all : works                             - 1 point
-option 2 roll one : works                             - 1 point
-option 3 sum      : works                             - 1 point
-option 4 save     : works                             - 1 point
-option 5 display  : works                             - 1 point
+option 1 roll all : works                             - 0 point
+option 2 roll one : works                             - 0 point
+option 3 sum      : works                             - 0 point
+option 4 save     : works                             - 0 point
+option 5 display  : works                             - 0 point
 option 6 quit     : works                             - 1 point
 
 Files in Git      : all three present                 - 3 points
 Test Harness      : passes all evaluation tests       - 5 points
-HighRoll          : passes all evaluation tests       - 4 points
+HighRoll          : passes all evaluation tests       - 0 points
 
 Total 37 out of 37 = 100% which is an A-plus
 
 Your score:
-Total ?? out of 37 = 94.59% which is an A
+Total 28 out of 37 = 75.68% which is a C    //updated and finalized 2020-02-28
 
 Explicit comments on the exercise:
 ----------------------------------
@@ -125,6 +125,13 @@ the way it should in the individual files.  Your DiceSet constructor barfs
 when the test harness tries to create a set with three six-sided dice.
 
 Keep going, you're almost there!!
+
+==========================================
+Updated 2020-02-28
+==========================================
+From what I can see in your repo, you never filled in the required stuff as
+I recommended here [see above].  Unfortunately, the grace period has passed
+on this assignment.....
 
 
 

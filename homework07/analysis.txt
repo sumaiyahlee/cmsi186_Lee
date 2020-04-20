@@ -1,0 +1,11 @@
+Analysis Report: Sumaiyah Lee
+
+Through my conversations with Professor Johnson, I was able to understand a few things a little bit
+better, regarding this assignment. First, regarding the actual probability method, I was able to make
+sense of that through my understanding of probability and also understanding that each person represents
+a different day. Concerning the experimental probability, Professor Johnson helped me to understand each 
+experiment as a different testing room with the same amount of people entered, and we're testing the 
+probability that another person in each room has the same birthday. Then, we add the amount of people that
+did and divide that number by the number of experiments. Another thing that helped with my understanding,
+especially when testing, was that after a certain amount of group of people, around 50, the probability
+that another person shared another birthday was almost 100.

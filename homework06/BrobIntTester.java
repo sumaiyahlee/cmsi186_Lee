@@ -1,3 +1,26 @@
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * File name  :  BrobIntTester.java
+ * Purpose    :  Test Harness for the BrobInt java class
+ * @author    :  B.J. Johnson
+ * Date       :  2017-04-05
+ * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
+ * Notes      :  None
+ * Warnings   :  None
+ *
+ *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * Revision History
+ * ================
+ *   Ver      Date     Modified by:  Reason for change or modification
+ *  -----  ----------  ------------  ---------------------------------------------------------------------
+ *  1.0.0  2017-04-05  B.J. Johnson  Initial writing and release
+ *  1.1.0  2017-04-13  B.J. Johnson  Added new BrobInt instances to check addition; refactored to
+ *                                     check the new versions of compareTo and equals; verified that all
+ *                                     additions work for both small and large numbers, as well as for
+ *                                     values of different lengths and including same-sign negative value
+ *                                     additions; ready to start subtractByte and subtractInt methods
+ *
+ *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 import java.text.DecimalFormat;
 
 public class BrobIntTester {
@@ -19,6 +42,8 @@ public class BrobIntTester {
    private static String g18String = "23";
    private static String g19String = "56789";
    private static String g20String = "37";
+   private static String g21String = "4400000000000";
+   private static String g22String = "2345678";
 
    private static BrobInt g1 = null;
    private static BrobInt g2 = null;
@@ -38,8 +63,10 @@ public class BrobIntTester {
    private static BrobInt g16 = null;
    private static BrobInt g17 = null;
    private static BrobInt g18 = null;
-   private static BrobInt g19 = null;
+   private static BrobInt g19 = new BrobInt( g19String );
    private static BrobInt g20 = null;
+   private static BrobInt g21 = new BrobInt( g21String );
+   private static BrobInt g22 = new BrobInt( g22String );
 
    private static int testNumber = 1;
    private static DecimalFormat df = new DecimalFormat( "000" );
@@ -125,7 +152,7 @@ public class BrobIntTester {
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       try {
-         System.out.println( "      expecting: " + BrobInt.ZERO + "\n" +
+         System.out.println( "      expecting: " + BrobInt.ZERO.toString() + "\n" +
                              "        and got: " + g5.toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
@@ -137,7 +164,7 @@ public class BrobIntTester {
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       try {
-         System.out.println( "      expecting: " + BrobInt.ONE + "\n" +
+         System.out.println( "      expecting: " + BrobInt.ONE.toString() + "\n" +
                              "        and got: " + g6.toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
@@ -149,7 +176,7 @@ public class BrobIntTester {
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       try {
-         System.out.println( "      expecting: " + BrobInt.TEN + "\n" +
+         System.out.println( "      expecting: " + BrobInt.TEN.toString() + "\n" +
                              "        and got: " + g7.toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
@@ -231,7 +258,8 @@ public class BrobIntTester {
 
       try {
          System.out.println( "    Test " + df.format( testNumber++ ) + ": Adding g11 and g12: " );
-         System.out.println( "      expecting: 30 and got " + g11.add( g12 ) );
+         System.out.println( "      expecting: 30\n" +
+                             "        and got: " + g11.add( g12 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
@@ -249,13 +277,15 @@ public class BrobIntTester {
 
       try {
          System.out.println( "    Test " + df.format( testNumber++ ) + ": Adding g11 and g13 [10 + 234567]: " );
-         System.out.println( "      expecting: 234577 and got " + g11.add( g13 ) );
+         System.out.println( "      expecting: 234577\n" +
+                             "        and got: " + g11.add( g13 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       try {
          System.out.println( "    Test " + df.format( testNumber++ ) + ": Adding g13 and g11 [234567 + 10]: " );
-         System.out.println( "      expecting: 234577 and got " + g13.add( g11 ) );
+         System.out.println( "      expecting: 234577\n" +
+                             "        and got: " + g13.add( g11 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
@@ -285,13 +315,11 @@ public class BrobIntTester {
 
       try {
          System.out.println( "    Test " + df.format( testNumber++ ) + ": Adding g14 and g15 [-234567 + -10]: " );
-         System.out.println( "      expecting: -234577 and got " + g14.add( g15 ) );
-      }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
-      try {
          System.out.println( "    Test " + df.format( testNumber++ ) + ": Adding g15 and g14 [-10 + -234567]: " );
-         System.out.println( "      expecting: -234577 and got " + g15.add( g14 ) );
+         System.out.println( "      expecting: -234577\n" +
+                             "        and got: " + g15.add( g14 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
@@ -305,26 +333,53 @@ public class BrobIntTester {
 
       try {
          System.out.println( "    Test " + df.format( testNumber++ ) + ": Adding g14 and g16 [-234567 + -999999]: " );
-         System.out.println( "      expecting: -1234566 and got " + g14.add( g16 ) );
+         System.out.println( "      expecting: -1234566\n" +
+                             "        and got: " + g14.add( g16 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       try {
          System.out.println( "    Test " + df.format( testNumber++ ) + ": Adding g16 and g14 [-999999 + -234567]: " );
-         System.out.println( "      expecting: -1234566 and got " + g16.add( g14 ) );
+         System.out.println( "      expecting: -1234566\n" +
+                             "        and got: " + g16.add( g14 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       try {
          System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Adding g1 and g4: " );
          System.out.println( "      expecting: 144127909719725076806064402568842359092656528233967026820237074760\n" +
-                             "        and got: " + g1.add( g4 ) );
+                             "        and got: " + g1.add( g4 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
-     // added note which needs to be taken care of in the next iteration....
-      System.out.println( "\n   NOTE: Never tested addition of unlike signs ~~\n" +
-                          "    this situation is not accounted for in my BrobInt.java file as yet." );
+      try {
+         System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Adding g13 and g16 [234567 + -999999]: " );
+         System.out.println( "      expecting: -765432\n" +
+                             "        and got: " + g13.add( g16 ).toString() );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
+
+      try {
+         System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Adding g22 and g16 [2345678 + -999999]: " );
+         System.out.println( "      expecting: 1345679\n" +
+                             "        and got: " + g22.add( g16 ).toString() );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
+
+      try {
+         System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Adding g16 and g19 [-999999 + 56789]: " );
+         System.out.println( "      expecting: -943210\n" +
+                             "        and got: " + g16.add( g19 ).toString() );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " ); e.printStackTrace(); }
+
+      try {
+         System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Adding g19 and g16 [56789 + -999999]: " );
+         System.out.println( "      expecting: -943210\n" +
+                             "        and got: " + g19.add( g16 ).toString() );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.getMessage() ); }
+
 
       System.out.println( "\n\n    TESTING COMPARETO() METHOD:\n" +
                           "    ===========================\n" +
@@ -333,13 +388,15 @@ public class BrobIntTester {
                           "                               returns:  0 if this = that" );
       try {
          System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Checking compareTo() method on g1.compareTo g2: "  );
-         System.out.println( "      expecting: 0 and got: " + g1.compareTo( g2 ) );
+         System.out.println( "      expecting: 0 \n" +
+                             "        and got: " + g1.compareTo( g2 ) );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       try {
          System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Checking compareTo() method on g2.compareTo g1: "  );
-         System.out.println( "      expecting: 0 and got: " + g2.compareTo( g1 ) );
+         System.out.println( "      expecting: 0\n" +
+                             "        and got: " + g2.compareTo( g1 ) );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
@@ -420,49 +477,63 @@ public class BrobIntTester {
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting g13 take away g11 [234567 - 10]: " );
       try {
          System.out.println( "      expecting: 234557\n" +
-                             "        and got: " + g13.subtract( g11 ) );
+                             "        and got: " + g13.subtract( g11 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting g11 take away g13 [10 - 234567]: " );
       try {
          System.out.println( "      expecting: -234557\n" +
-                             "        and got: " + g11.subtract( g13 ) );
+                             "        and got: " + g11.subtract( g13 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting g13 take away g15 [234567 - (-10)]: " );
       try {
          System.out.println( "      expecting: 234577\n" +
-                             "        and got: " + g13.subtract( g15 ) );
+                             "        and got: " + g13.subtract( g15 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting g15 take away g13 [(-10) - 234567]: " );
       try {
          System.out.println( "      expecting: -234577\n" +
-                             "        and got: " + g15.subtract( g13 ) );
+                             "        and got: " + g15.subtract( g13 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting g14 take away g16 [(-234567) - (-999999)]: " );
       try {
          System.out.println( "      expecting: 765432\n" +
-                             "        and got: " + g14.subtract( g16 ) );
+                             "        and got: " + g14.subtract( g16 ).toString() );
       }
-      catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.getLocalizedMessage() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting g16 take away g14 [(-999999) - (-234567)]: " );
       try {
          System.out.println( "      expecting: -765432\n" +
-                             "        and got: " + g16.subtract( g14 ) );
+                             "        and got: " + g16.subtract( g14 ).toString() );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.getLocalizedMessage() ); }
+
+      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting g1 take away g1 [too long for brackets]: " );
+      try {
+         System.out.println( "      expecting: 000000000000000000000000000000000000000000000000000000000000000000\n" +
+                             "        and got: " + g1.subtract( g1 ).toString() );
+      }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.getLocalizedMessage() ); }
+
+      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting 4400000000000 take away 1234: " );
+      try {
+         System.out.println( "      expecting: 4399999998766\n" +
+                             "        and got: " + g21.subtract( new BrobInt( "1234" ) ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
-      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting g1 take away g1 [too long to list]: " );
+      System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Subtracting 4400000000000 take away 11186: " );
       try {
-         System.out.println( "      expecting: 000000000000000000000000000000000000000000000000000000000000000000\n" +
-                             "        and got: " + g1.subtract( g1 ) );
+         System.out.println( "      expecting: 4399999988814\n" +
+                             "        and got: " + g21.subtract( new BrobInt( "11186" ) ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
@@ -471,7 +542,7 @@ public class BrobIntTester {
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying g7 by g12 [10 * 20]: " );
       try {
          System.out.println( "      expecting: 200\n" +
-                             "        and got: " + g7.multiply( g12 ) );
+                             "        and got: " + g7.multiply( g12 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
@@ -510,63 +581,63 @@ public class BrobIntTester {
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying g17 by g18 [765 * 23]: " );
       try {
          System.out.println( "      expecting: 17595\n" +
-                             "        and got: " + g17.multiply( g18 ) );
+                             "        and got: " + g17.multiply( g18 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying g18 by g20 [23 * 37]: " );
       try {
          System.out.println( "      expecting: 851\n" +
-                             "        and got: " + g18.multiply( g20 ) );
+                             "        and got: " + g18.multiply( g20 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying g19 by g20 [56789 * 37]: " );
       try {
          System.out.println( "      expecting: 2101193\n" +
-                             "        and got: " + g19.multiply( g20 ) );
+                             "        and got: " + g19.multiply( g20 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying g18 by g17 [23 * 765]: " );
       try {
          System.out.println( "      expecting: 17595\n" +
-                             "        and got: " + g18.multiply( g17 ) );
+                             "        and got: " + g18.multiply( g17 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying g17 by g19 [765 * 56789]: " );
       try {
          System.out.println( "      expecting: 43443585\n" +
-                             "        and got: " + g17.multiply( g19 ) );
+                             "        and got: " + g17.multiply( g19 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying g20 by g19 [37 * 56789]: " );
       try {
          System.out.println( "      expecting: 2101193\n" +
-                             "        and got: " + g20.multiply( g19 ) );
+                             "        and got: " + g20.multiply( g19 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying g04 by 3: " );
       try {
          System.out.println( "      expecting: 43238372915913199204527729450732254954851885232694621\n" +
-                             "        and got: " + g4.multiply( new BrobInt( "3" ) ) );
+                             "        and got: " + g4.multiply( new BrobInt( "3" ) ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying 82832833 by 3: " );
       try {
          System.out.println( "      expecting: 248498499\n" +
-                             "        and got: " + new BrobInt("82832833").multiply( new BrobInt( "3" ) ) );
+                             "        and got: " + new BrobInt("82832833").multiply( new BrobInt( "3" ) ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Multiplying 82832833 by 3 and adding 1: " );
       try {
          System.out.println( "      expecting: 248498500\n" +
-                             "        and got: " + new BrobInt("82832833").multiply( new BrobInt( "3" ) ).add( BrobInt.ONE ) );
+                             "        and got: " + new BrobInt("82832833").multiply( new BrobInt( "3" ) ).add( BrobInt.ONE ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
@@ -584,7 +655,7 @@ public class BrobIntTester {
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Dividing g19 by g20 [56789 / 37]: " );
       try {
          System.out.println( "      expecting: 1534\n" +
-                             "        and got: " + g19.divide( g20 ) );
+                             "        and got: " + g19.divide( g20 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
@@ -592,14 +663,14 @@ public class BrobIntTester {
       BrobInt fiftytwo = new BrobInt( "52" );
       try {
          System.out.println( "      expecting: 26\n" +
-                             "        and got: " + fiftytwo.divide( BrobInt.TWO ) );
+                             "        and got: " + fiftytwo.divide( BrobInt.TWO ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Dividing g17 by g20 [765 / 37]: " );
       try {
          System.out.println( "      expecting: 20\n" +
-                             "        and got: " + g17.divide( g20 ) );
+                             "        and got: " + g17.divide( g20 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
@@ -607,7 +678,7 @@ public class BrobIntTester {
       BrobInt tenK = new BrobInt( "10000" );
       try {
          System.out.println( "      expecting: 5000\n" +
-                             "        and got: " + tenK.divide( BrobInt.TWO ) );
+                             "        and got: " + tenK.divide( BrobInt.TWO ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
@@ -616,14 +687,14 @@ public class BrobIntTester {
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Modding g17 by g18 [765 % 23]: " );
       try {
          System.out.println( "      expecting: 6\n" +
-                             "        and got: " + g17.remainder( g18 ) );
+                             "        and got: " + g17.remainder( g18 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
       System.out.println( "\n    Test " + df.format( testNumber++ ) + ": Modding g19 by g20 [56789 % 37]: " );
       try {
          System.out.println( "      expecting: 31\n" +
-                             "        and got: " + g19.remainder( g20 ) );
+                             "        and got: " + g19.remainder( g20 ).toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
 
