@@ -1,0 +1,254 @@
+"running BirthdaySolver test harness for evaluation....." 
+========================================================= 
+. 
+. 
+Running BirthdaySolver with no args 
+========================================================= 
+. 
+. 
+Running BirthdaySolver with hope 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 5.5 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 0 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 7 
+   Probability that two out of 7 people have the same birthday: 
+      Experimental value is: 5.80%
+            Actual value is: 5.62%
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 100 
+   Probability that two out of 100 people have the same birthday: 
+      Experimental value is: 100.00%
+            Actual value is: 100.00%
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 1000000 
+   Probability that two out of 1000000 people have the same birthday: 
+      Experimental value is: 100.00%
+            Actual value is: 100.00%
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with -7 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 7 0 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 100 3000000 
+Due to the number of experiments you have entered, processing time may be longer.
+   Probability that two out of 100 people have the same birthday: 
+      Experimental value is: 100.00%
+            Actual value is: 100.00%
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 500 400000 
+   Probability that two out of 500 people have the same birthday: 
+      Experimental value is: 100.00%
+            Actual value is: 100.00%
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 7 -1 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with false true 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 23 
+   Probability that two out of 23 people have the same birthday: 
+      Experimental value is: 50.87%
+            Actual value is: 50.73%
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 50 100.5 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 366 
+   Probability that two out of 366 people have the same birthday: 
+      Experimental value is: 100.00%
+            Actual value is: 100.00%
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 1 10000 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 2 
+   Probability that two out of 2 people have the same birthday: 
+      Experimental value is: .29%
+            Actual value is: .27%
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 1 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
+========================================================= 
+. 
+. 
+Running BirthdaySolver with 1.5 
+
+
+Welcome to Birthday Solver, a program that tests the probability that 2 people share the same birthday out of a group.
+USAGE:
+   java SkateRamp <numberOfPeople> [numberOfExperiments]
+     where: 
+       <numberOfPeople> is an integer value that represents the pool of people you'd like to test
+       (Integer must be at least 2)
+       [numberOfExperiments] is an optional integer value that represents the amount of tests you'd like to perform
+       (Default number of experiments is 100,000)
+
+
