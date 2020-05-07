@@ -1,0 +1,326 @@
+"running CircleSolver test harness for evaluation....." 
+========================================================= 
+. 
+. 
+Running CircleSolver with no args 
+
+
+Error for input...
+USAGE:
+   java CircleSolver <x1> <y1> <radius1> <x2> <y2> <radius2>
+     where: 
+       <x1> <y1> coordinates for center of first circle 
+       <radius1> radius of first circle 
+       <x2> <y2> coordinates for center of second circle 
+       <radius2> radius of second circle 
+
+
+========================================================= 
+. 
+. 
+Running CircleSolver with hope 
+
+
+Error for input...
+USAGE:
+   java CircleSolver <x1> <y1> <radius1> <x2> <y2> <radius2>
+     where: 
+       <x1> <y1> coordinates for center of first circle 
+       <radius1> radius of first circle 
+       <x2> <y2> coordinates for center of second circle 
+       <radius2> radius of second circle 
+
+
+========================================================= 
+. 
+. 
+Running CircleSolver with 0 
+
+
+Error for input...
+USAGE:
+   java CircleSolver <x1> <y1> <radius1> <x2> <y2> <radius2>
+     where: 
+       <x1> <y1> coordinates for center of first circle 
+       <radius1> radius of first circle 
+       <x2> <y2> coordinates for center of second circle 
+       <radius2> radius of second circle 
+
+
+========================================================= 
+. 
+. 
+Running CircleSolver with 30 20 10 30 30 20 
+Circle 1: 
+Center => (30,20) 
+Radius => 10
+
+Circle 2: 
+Center => (30,30) 
+Radius => 20
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with 30 20 15 30 30 20 
+Circle 1: 
+Center => (30,20) 
+Radius => 15
+
+Circle 2: 
+Center => (30,30) 
+Radius => 20
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with 30 35 3 30 30 10 
+Circle 1: 
+Center => (30,35) 
+Radius => 3
+
+Circle 2: 
+Center => (30,30) 
+Radius => 10
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with 30 30 20 30 20 10 
+Circle 1: 
+Center => (30,30) 
+Radius => 20
+
+Circle 2: 
+Center => (30,20) 
+Radius => 10
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with 30 30 20 30 20 15 
+Circle 1: 
+Center => (30,30) 
+Radius => 20
+
+Circle 2: 
+Center => (30,20) 
+Radius => 15
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with 30 30 10 30 35 3 
+Circle 1: 
+Center => (30,30) 
+Radius => 10
+
+Circle 2: 
+Center => (30,35) 
+Radius => 3
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with 10 10 10 10 10 10 
+Circle 1: 
+Center => (10,10) 
+Radius => 10
+
+Circle 2: 
+Center => (10,10) 
+Radius => 10
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with 0 0 10 0 2 10 
+Circle 1: 
+Center => (0,0) 
+Radius => 10
+
+Circle 2: 
+Center => (0,2) 
+Radius => 10
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with 10 10 10 20 20 10 
+Circle 1: 
+Center => (10,10) 
+Radius => 10
+
+Circle 2: 
+Center => (20,20) 
+Radius => 10
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with 10 10 10 40 40 10 
+Circle 1: 
+Center => (10,10) 
+Radius => 10
+
+Circle 2: 
+Center => (40,40) 
+Radius => 10
+
+Your circles did not intersect.
+========================================================= 
+. 
+. 
+Running CircleSolver with -100 150 30 -100 200 40 
+Circle 1: 
+Center => (-100,150) 
+Radius => 30
+
+Circle 2: 
+Center => (-100,200) 
+Radius => 40
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with -100 150 20 100 150 40 
+Circle 1: 
+Center => (-100,150) 
+Radius => 20
+
+Circle 2: 
+Center => (100,150) 
+Radius => 40
+
+Your circles did not intersect.
+========================================================= 
+. 
+. 
+Running CircleSolver with 70 -80 20 75 -75 30 
+Circle 1: 
+Center => (70,-80) 
+Radius => 20
+
+Circle 2: 
+Center => (75,-75) 
+Radius => 30
+
+Your circles intersect at multiple points.
+========================================================= 
+. 
+. 
+Running CircleSolver with 50 60.5 14 51.5 54 16 
+========================================================= 
+. 
+. 
+Running CircleSolver with -80.5 -40 20 -90 -100 40 
+========================================================= 
+. 
+. 
+Running CircleSolver with f t 70 8 9 h 
+
+
+Error for input...
+USAGE:
+   java CircleSolver <x1> <y1> <radius1> <x2> <y2> <radius2>
+     where: 
+       <x1> <y1> coordinates for center of first circle 
+       <radius1> radius of first circle 
+       <x2> <y2> coordinates for center of second circle 
+       <radius2> radius of second circle 
+
+
+========================================================= 
+. 
+. 
+Running CircleSolver with circle 6 7 5 6 8 
+========================================================= 
+. 
+. 
+Running CircleSolver with 7 8 9 
+
+
+Error for input...
+USAGE:
+   java CircleSolver <x1> <y1> <radius1> <x2> <y2> <radius2>
+     where: 
+       <x1> <y1> coordinates for center of first circle 
+       <radius1> radius of first circle 
+       <x2> <y2> coordinates for center of second circle 
+       <radius2> radius of second circle 
+
+
+========================================================= 
+. 
+. 
+Running CircleSolver with 0 0 0 
+
+
+Error for input...
+USAGE:
+   java CircleSolver <x1> <y1> <radius1> <x2> <y2> <radius2>
+     where: 
+       <x1> <y1> coordinates for center of first circle 
+       <radius1> radius of first circle 
+       <x2> <y2> coordinates for center of second circle 
+       <radius2> radius of second circle 
+
+
+========================================================= 
+. 
+. 
+Running CircleSolver with 40 40 10 0 0 0 
+
+
+Error for input...
+USAGE:
+   java CircleSolver <x1> <y1> <radius1> <x2> <y2> <radius2>
+     where: 
+       <x1> <y1> coordinates for center of first circle 
+       <radius1> radius of first circle 
+       <x2> <y2> coordinates for center of second circle 
+       <radius2> radius of second circle 
+
+
+========================================================= 
+. 
+. 
+Running CircleSolver with 50 50 0  
+
+
+Error for input...
+USAGE:
+   java CircleSolver <x1> <y1> <radius1> <x2> <y2> <radius2>
+     where: 
+       <x1> <y1> coordinates for center of first circle 
+       <radius1> radius of first circle 
+       <x2> <y2> coordinates for center of second circle 
+       <radius2> radius of second circle 
+
+
+========================================================= 
+. 
+. 
+Running CircleSolver with 50 50 0 55 55 0 
+
+
+Error for input...
+USAGE:
+   java CircleSolver <x1> <y1> <radius1> <x2> <y2> <radius2>
+     where: 
+       <x1> <y1> coordinates for center of first circle 
+       <radius1> radius of first circle 
+       <x2> <y2> coordinates for center of second circle 
+       <radius2> radius of second circle 
+
+

@@ -1,0 +1,291 @@
+"running BinaryClockSolver test harness for evaluation....." 
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with no args 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with testing 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 0 
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 00:00:00 
+------
+oooooo
+oooooo
+oooooo
+------
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 60:60:60 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 40:40:40 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 24:30:30 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 12:30: 6 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 1:6:7 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with -8:20:20 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 07 45 08 
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 09:11:20 
+------
+oooooo
+oooooo
+oooooo
+------
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 03:26:15 
+------
+oooooo
+oooooo
+oooooo
+------
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 045:026:178 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 05:11:24 
+------
+oooooo
+oooooo
+oooooo
+------
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 08:12:04 
+------
+oooooo
+oooooo
+oooooo
+------
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 11:32:59 
+------
+oooooo
+oooooo
+oooooo
+------
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 23:59:59 
+------
+oooooo
+oooooo
+oooooo
+------
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with la:di:da 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with circle 01:02:03 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with :34:26 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 20:30:40: 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 20:30:40: 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 06:33:02  
+------
+oooooo
+oooooo
+oooooo
+------
+========================================================= 
+. 
+. 
+Running BinaryClockSolver with 12:70:34 
+
+
+Error for input...
+USAGE:
+   java BinaryClockSolver <timestring> 
+     where: 
+       <timestring> is 'HH:MM:SS' 
+       all values must be two digits. 
+
+
